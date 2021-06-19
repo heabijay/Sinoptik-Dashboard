@@ -1,0 +1,50 @@
+#data .cityName.cityNameShort {
+    margin-bottom: 2rem;
+}
+
+#data .cityName.cityNameShort h1 {
+    font-size: 1.75rem;
+}
+
+.componentFill {
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wind-S {
+    transform: rotate(0deg);
+}
+
+.wind-SW {
+    transform: rotate(45deg);
+}
+
+.wind-W {
+    transform: rotate(90deg);
+}
+
+.wind-NW {
+    transform: rotate(135deg);
+}
+
+.wind-N {
+    transform: rotate(180deg);
+}
+
+.wind-NE {
+    transform: rotate(-135deg);
+}
+
+.wind-E {
+    transform: rotate(-90deg);
+}
+
+.wind-SE {
+    transform: rotate(-45deg);
+}
+
+.wind-Z::before {
+    content: "\f28d";
+}

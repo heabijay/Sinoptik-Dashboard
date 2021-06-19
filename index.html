@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sinoptik-Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="shortcut icon" href="//sinst.fwdcdn.com/favicon.ico?v=1">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="max-height: 56px;">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/sinoptic-logo.png" style="height: 26px;"></img>
+          <span class="align-middle">Dashboard</span>
+        </a>
+      
+        <div class="" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="langDropdownBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" id="langDropdownMenu" aria-labelledby="langDropdown" style="position: absolute;"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container componentFill" id="content">
+      <div class="col-12 col-md-6 mx-auto mt-3 d-print-none">
+        <h4 class="text-muted my-2 lead visibleOnFirstPage">Let's look for your city</h4>
+        <div class="d-flex flex-row my-3">
+          <form class="input-group">
+            <input type="text" class="form-control typeahead" data-provide="typeahead" placeholder="City, Region" id="searchField">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="searchBtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <button class="btn btn-outline-secondary ml-1 d-none unvisibleOnFirstPage" type="button" id="refreshBtn" title="Refresh w/o cache data">
+            <i class="fas fa-sync"></i>
+          </button>
+        </div>
+        
+      </div>
+      <div class="col flex-grow-0 my-3" id="data"></div>
+      <p class="col-12 col-md-6 mx-auto text-muted visibleOnFirstPage text-center">Sinoptik-Dashboard is an ad-free semi-auto web-wrapper based on <a href="https://sinoptik.ua" target="_blank">sinoptik.ua</a></p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js" integrity="sha512-HWlJyU4ut5HkEj0QsK/IxBCY55n5ZpskyjVlAoV9Z7XQwwkqXoYdCIC93/htL3Gu5H3R4an/S0h2NXfbZk3g7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/langController.js"></script>
+    <script src="js/sinoptikPage.js"></script>
+    <script src="js/pageRender.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
