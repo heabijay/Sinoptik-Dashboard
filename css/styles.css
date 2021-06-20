@@ -760,3 +760,13 @@
 .weatherIcoS .n440 {
     background-position: -240px -210px !important
 }
+
+.weatherImg {
+    display: none
+}
+
+@media print {
+    .weatherImg {
+        display: block
+    }
+}

@@ -38,10 +38,8 @@ class ForecastTableRender {
         this.$limit = 4;
 
         this.$pushToTable = function (tableSelector, timeDto) {
-            console.log(timeDto.weatherClass);
-
             $(`${tableSelector} .time`, this.base).append(`<th class="align-middle" scope="col">${timeDto.time}</th>`);
-            $(`${tableSelector} .weather`, this.base).append(`<td class="align-middle"><div class="${timeDto.weatherClass}" title="${timeDto.weather}"></div></td>`);
+            $(`${tableSelector} .weather`, this.base).append(`<td class="align-middle"><div class="${timeDto.weatherClass}" title="${timeDto.weather}">${timeDto.weatherImgTag}</div></td>`);
             $(`${tableSelector} .temperature`, this.base).append(`<td class="align-middle">${`${timeDto.temperature} <br/> <small class="text-muted">${timeDto.temperatureSens}</span>`}</td>`);
             $(`${tableSelector} .wind`, this.base).append(`<td class="align-middle">${`<span title="${timeDto.windStr}"><i class="fas fa-arrow-circle-up ${timeDto.windClass}"></i> ${timeDto.wind}</span>`}</td>`);
             $(`${tableSelector} .chanceOfPrecipitation`, this.base).append(`<td class="align-middle">${timeDto.chanceOfPrecipitation == '-' ? '-' : timeDto.chanceOfPrecipitation + '%'}</td>`);
@@ -80,13 +78,14 @@ class DefaultResponsePage {
                     this.temperature.innerHTML = `<span title="Max Temperature">${sinoptikPage.day.temperatureMax}</span> <span class="text-muted" title="Min Temperature">| ${sinoptikPage.day.temperatureMin}</span>`;
                     this.weather.innerHTML = sinoptikPage.day.weather;
                     $(this.weatherIcon).attr("class", sinoptikPage.day.weatherClass);
+                    $(this.weatherIcon).html(sinoptikPage.day.weatherImgTag);
                     this.description.innerHTML = sinoptikPage.day.description;
                     
-                    const mainRender = new ForecastTableRender(this.main);
+                    const forecastRender = new ForecastTableRender(this.main);
 
                     for (let i = 0; i < sinoptikPage.day.times.length; i++) {
                         const t = sinoptikPage.day.times[i];
-                        mainRender.push(t);
+                        forecastRender.push(t);
                     }
 
                     if (sinoptikPage.dayWarnings)
@@ -123,10 +122,10 @@ class PageRender {
             html += `
                 <tr>
                     <td class="d-flex flex-wrap px-0">
-                        <div class="col-12 col-md-3 my-3 my-md-0 d-flex flex-column justify-content-center weatherIcoS">
+                        <div class="col-12 col-md-3 mb-3 mb-md-0 d-flex flex-column justify-content-center weatherIcoS">
                             <div class="d-flex flex-row">
-                                <div>
-                                    <div class="weatherIcon" style="transform: scale(2.0); margin: 1rem auto;"></div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="weatherIcon" style="transform: scale(2.0); margin: 1.75rem auto;"></div>
                                     <p class="temperature m-0 text-nowrap"></p>
                                 </div>
                                 <div class="ml-3 flex-fill d-flex flex-column justify-content-center">

@@ -3,6 +3,7 @@ class SinoptikTimeDto {
         this.time = null;
         this.weather = null;
         this.weatherСlass = null;
+        this.weatherImgTag = null;
         this.temperature = null;
         this.temperatureSens = null;
         this.wind = null;
@@ -17,6 +18,7 @@ class SinoptikDayDto {
         this.name = null;
         this.weather = null;
         this.weatherClass = null;
+        this.weatherImgTag = null;
         this.description = null;
         this.warnings = null;
         this.date = null;
@@ -53,6 +55,7 @@ class SinoptikPage {
         dto.day.name = $('#' + selectedDayId + " .day-link", page)[0]?.innerText;
         dto.day.weather = $('#' + selectedDayId + " .weatherIco", page)?.attr("title");
         dto.day.weatherClass = $('#' + selectedDayId + " .weatherIco", page)?.attr("class");
+        dto.day.weatherImgTag = $('#' + selectedDayId + " .weatherIco", page).html();
 
         const dayPathes = $('#' + selectedDayId + " .day-link", page)?.attr("data-link")?.split('/');
         if (dayPathes) {
@@ -74,6 +77,7 @@ class SinoptikPage {
                 timeDto.time = timeDetails[0].children[i].innerText.replace(' ', '').trim();
                 timeDto.weather = timeDetails[1].children[i].children[0].attributes["title"].value;
                 timeDto.weatherClass = timeDetails[1].children[i].children[0].attributes["class"].value;
+                timeDto.weatherImgTag = timeDetails[1].children[i].children[0].innerHTML;
                 timeDto.temperature = timeDetails[2].children[i].innerText;
                 timeDto.temperatureSens = timeDetails[3].children[i].innerText;
                 timeDto.wind = timeDetails[6].children[i].innerText.trim();
