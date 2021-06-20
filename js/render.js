@@ -43,16 +43,10 @@ class ForecastTableRender {
 
         this.push = function (timeDto) {
             this.$pushToTable(".d-md-table table", timeDto);
-            console.log($(".d-md-none table tr:first-child td", this.base).length >= this.$limit + 1);
             if ($(".d-md-none table:last-child tr:first-child td", this.base).length >= this.$limit + 1) {
                 $(".d-md-none", this.base).append(this.tableTemplate);
             }
             this.$pushToTable(".d-md-none table:last-child", timeDto);
-
-            // this.$pushTime(timeDto.time);
-            // this.$pushTemperature(`${timeDto.temperature} <br/> <small class="text-muted">${timeDto.temperatureSens}</span>`);
-            // this.$pushWind(`<span title="${timeDto.windStr}"><i class="fas fa-arrow-circle-up ${timeDto.windClass}"></i> ${timeDto.wind}</span>`);
-            // this.$pushChanceOfPrecipitation(timeDto.chanceOfPrecipitation == '-' ? '-' : timeDto.chanceOfPrecipitation + '%');
         }
     }
 }
