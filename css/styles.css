@@ -56,3 +56,707 @@
 .forecastTable {
     font-size: 0.9rem;
 }
+
+.weatherIco {
+    width: 40px;
+    height: 40px;
+    margin: 3px auto 0;
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-m.png") no-repeat 0 0;
+}
+
+
+.weatherIco {
+    width: 40px;
+    height: 40px;
+    margin: 3px auto 0;
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-m.png") no-repeat 0 0
+}
+
+.sandoraSun .weatherIco {
+    width: 40px;
+    height: 40px;
+    margin: 3px auto 0;
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-m-sandora.png") no-repeat 0 0
+}
+
+.weatherIco img {
+    width: 40px;
+    height: 40px
+}
+
+.weatherIcoS .weatherIco {
+    width: 30px;
+    height: 25px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-s.png") no-repeat 0 0
+}
+
+.weatherIcoS .weatherIco img {
+    width: 30px;
+    height: 30px
+}
+
+.weatherIcoS .cur .weatherIco {
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-s2.png") no-repeat 0 0
+}
+
+.cp1 .p1 .weatherIco, .cp2 .p2 .weatherIco, .cp3 .p3 .weatherIco, .cp4 .p4 .weatherIco, .cp5 .p5 .weatherIco, .cp6 .p6 .weatherIco, .cp7 .p7 .weatherIco, .cp8 .p8 .weatherIco {
+    background: url("https://sinst.fwdcdn.com/img/weatherImg/s2-s2.png") no-repeat 0 0
+}
+
+.b-cities-weather-img .weatherIco {
+    display: inline-block
+}
+
+.lt-ie8 .b-cities-weather-img .weatherIco {
+    display: inline;
+    zoom: 1
+}
+
+.lSide .img {
+    width: 188px;
+    height: 150px;
+    margin: 0 0 0 -5px
+}
+
+.lSide .img img {
+    width: 188px;
+    height: 150px
+}
+
+.d100 {
+    background-position: 0 0 !important
+}
+
+.d103 {
+    background-position: -200px -320px !important
+}
+
+.d110 {
+    background-position: -40px 0 !important
+}
+
+.d111, .d121, .d131, .d141 {
+    background-position: -80px 0 !important
+}
+
+.d112 {
+    background-position: -120px 0 !important
+}
+
+.d120 {
+    background-position: -160px 0 !important
+}
+
+.d122 {
+    background-position: -200px 0 !important
+}
+
+.d130 {
+    background-position: -240px 0 !important
+}
+
+.d132, .d142 {
+    background-position: -280px 0 !important
+}
+
+.d140 {
+    background-position: -320px 0 !important
+}
+
+.d200 {
+    background-position: 0 -40px !important
+}
+
+.d210 {
+    background-position: -40px -40px !important
+}
+
+.d211, .d221, .d231, .d241 {
+    background-position: -80px -40px !important
+}
+
+.d212 {
+    background-position: -120px -40px !important
+}
+
+.d220 {
+    background-position: -160px -40px !important
+}
+
+.d222 {
+    background-position: -200px -40px !important
+}
+
+.d230 {
+    background-position: -240px -40px !important
+}
+
+.d232, .d242 {
+    background-position: -280px -40px !important
+}
+
+.d240 {
+    background-position: -320px -40px !important
+}
+
+.d300 {
+    background-position: 0 -80px !important
+}
+
+.d310 {
+    background-position: -40px -80px !important
+}
+
+.d311, .d321, .d331, .d341 {
+    background-position: -80px -80px !important
+}
+
+.d312 {
+    background-position: -120px -80px !important
+}
+
+.d320 {
+    background-position: -160px -80px !important
+}
+
+.d322 {
+    background-position: -200px -80px !important
+}
+
+.d330 {
+    background-position: -240px -80px !important
+}
+
+.d332, .d342 {
+    background-position: -280px -80px !important
+}
+
+.d340 {
+    background-position: -320px -80px !important
+}
+
+.d400 {
+    background-position: 0 -120px !important
+}
+
+.d410 {
+    background-position: -40px -120px !important
+}
+
+.d411, .d421, .d431, .d441 {
+    background-position: -80px -120px !important
+}
+
+.d412 {
+    background-position: -120px -120px !important
+}
+
+.d420 {
+    background-position: -160px -120px !important
+}
+
+.d422 {
+    background-position: -200px -120px !important
+}
+
+.d430 {
+    background-position: -240px -120px !important
+}
+
+.d432, .d442 {
+    background-position: -280px -120px !important
+}
+
+.d440 {
+    background-position: -320px -120px !important
+}
+
+.d000 {
+    background-position: 0 -320px !important
+}
+
+.d500 {
+    background-position: -40px -320px !important
+}
+
+.d600, .n600 {
+    background-position: -80px -320px !important
+}
+
+.n000 {
+    background-position: -120px -320px !important
+}
+
+.n500 {
+    background-position: -160px -320px !important
+}
+
+.n100 {
+    background-position: 0 -160px !important
+}
+
+.n103 {
+    background-position: -240px -320px !important
+}
+
+.n110 {
+    background-position: -40px -160px !important
+}
+
+.n111, .n121, .n131, .n141 {
+    background-position: -80px -160px !important
+}
+
+.n112 {
+    background-position: -120px -160px !important
+}
+
+.n120 {
+    background-position: -160px -160px !important
+}
+
+.n122 {
+    background-position: -200px -160px !important
+}
+
+.n130 {
+    background-position: -240px -160px !important
+}
+
+.n132, .n142 {
+    background-position: -280px -160px !important
+}
+
+.n140 {
+    background-position: -320px -160px !important
+}
+
+.n200 {
+    background-position: 0 -200px !important
+}
+
+.n210 {
+    background-position: -40px -200px !important
+}
+
+.n211, .n221, .n231, .n241 {
+    background-position: -80px -200px !important
+}
+
+.n212 {
+    background-position: -120px -200px !important
+}
+
+.n220 {
+    background-position: -160px -200px !important
+}
+
+.n222 {
+    background-position: -200px -200px !important
+}
+
+.n230 {
+    background-position: -240px -200px !important
+}
+
+.n232, .n242 {
+    background-position: -280px -200px !important
+}
+
+.n240 {
+    background-position: -320px -200px !important
+}
+
+.n300 {
+    background-position: 0 -240px !important
+}
+
+.n310 {
+    background-position: -40px -240px !important
+}
+
+.n311, .n321, .n331, .n341 {
+    background-position: -80px -240px !important
+}
+
+.n312 {
+    background-position: -120px -240px !important
+}
+
+.n320 {
+    background-position: -160px -240px !important
+}
+
+.n322 {
+    background-position: -200px -240px !important
+}
+
+.n330 {
+    background-position: -240px -240px !important
+}
+
+.n332, .n342 {
+    background-position: -280px -240px !important
+}
+
+.n340 {
+    background-position: -320px -240px !important
+}
+
+.n400 {
+    background-position: 0 -280px !important
+}
+
+.n410 {
+    background-position: -40px -280px !important
+}
+
+.n411, .n421, .n431, .n441 {
+    background-position: -80px -280px !important
+}
+
+.n412 {
+    background-position: -120px -280px !important
+}
+
+.n420 {
+    background-position: -160px -280px !important
+}
+
+.n422 {
+    background-position: -200px -280px !important
+}
+
+.n430 {
+    background-position: -240px -280px !important
+}
+
+.n432, .n442 {
+    background-position: -280px -280px !important
+}
+
+.n440 {
+    background-position: -320px -280px !important
+}
+
+.weatherIcoS .d100 {
+    background-position: 0 0 !important
+}
+
+.weatherIcoS .d103 {
+    background-position: -180px -240px !important
+}
+
+.weatherIcoS .d110 {
+    background-position: -30px 0 !important
+}
+
+.weatherIcoS .d111, .weatherIcoS .d121, .weatherIcoS .d131, .weatherIcoS .d141 {
+    background-position: -60px 0 !important
+}
+
+.weatherIcoS .d112 {
+    background-position: -90px 0 !important
+}
+
+.weatherIcoS .d120 {
+    background-position: -120px 0 !important
+}
+
+.weatherIcoS .d122 {
+    background-position: -150px 0 !important
+}
+
+.weatherIcoS .d130 {
+    background-position: -180px 0 !important
+}
+
+.weatherIcoS .d132, .weatherIcoS .d142 {
+    background-position: -210px 0 !important
+}
+
+.weatherIcoS .d140 {
+    background-position: -240px 0 !important
+}
+
+.weatherIcoS .d200 {
+    background-position: 0 -30px !important
+}
+
+.weatherIcoS .d210 {
+    background-position: -30px -30px !important
+}
+
+.weatherIcoS .d211, .weatherIcoS .d221, .weatherIcoS .d231, .weatherIcoS .d241 {
+    background-position: -60px -30px !important
+}
+
+.weatherIcoS .d212 {
+    background-position: -90px -30px !important
+}
+
+.weatherIcoS .d220 {
+    background-position: -120px -30px !important
+}
+
+.weatherIcoS .d222 {
+    background-position: -150px -30px !important
+}
+
+.weatherIcoS .d230 {
+    background-position: -180px -30px !important
+}
+
+.weatherIcoS .d232, .weatherIcoS .d242 {
+    background-position: -210px -30px !important
+}
+
+.weatherIcoS .d240 {
+    background-position: -240px -30px !important
+}
+
+.weatherIcoS .d300 {
+    background-position: 0 -60px !important
+}
+
+.weatherIcoS .d310 {
+    background-position: -30px -60px !important
+}
+
+.weatherIcoS .d311, .weatherIcoS .d321, .weatherIcoS .d331, .weatherIcoS .d341 {
+    background-position: -60px -60px !important
+}
+
+.weatherIcoS .d312 {
+    background-position: -90px -60px !important
+}
+
+.weatherIcoS .d320 {
+    background-position: -120px -60px !important
+}
+
+.weatherIcoS .d322 {
+    background-position: -150px -60px !important
+}
+
+.weatherIcoS .d330 {
+    background-position: -180px -60px !important
+}
+
+.weatherIcoS .d332, .weatherIcoS .d342 {
+    background-position: -210px -60px !important
+}
+
+.weatherIcoS .d340 {
+    background-position: -240px -60px !important
+}
+
+.weatherIcoS .d400 {
+    background-position: 0 -90px !important
+}
+
+.weatherIcoS .d410 {
+    background-position: -30px -90px !important
+}
+
+.weatherIcoS .d411, .weatherIcoS .d421, .weatherIcoS .d431, .weatherIcoS .d441 {
+    background-position: -60px -90px !important
+}
+
+.weatherIcoS .d412 {
+    background-position: -90px -90px !important
+}
+
+.weatherIcoS .d420 {
+    background-position: -120px -90px !important
+}
+
+.weatherIcoS .d422 {
+    background-position: -150px -90px !important
+}
+
+.weatherIcoS .d430 {
+    background-position: -180px -90px !important
+}
+
+.weatherIcoS .d432, .weatherIcoS .d442 {
+    background-position: -210px -90px !important
+}
+
+.weatherIcoS .d440 {
+    background-position: -240px -90px !important
+}
+
+.weatherIcoS .d000 {
+    background-position: 0 -240px !important
+}
+
+.weatherIcoS .d500 {
+    background-position: -30px -240px !important
+}
+
+.weatherIcoS .d600 {
+    background-position: -60px -240px !important
+}
+
+.weatherIcoS .n600 {
+    background-position: -150px -240px !important
+}
+
+.weatherIcoS .n000 {
+    background-position: -90px -240px !important
+}
+
+.weatherIcoS .n500 {
+    background-position: -120px -240px !important
+}
+
+.weatherIcoS .n100 {
+    background-position: 0 -120px !important
+}
+
+.weatherIcoS .n103 {
+    background-position: -210px -240px !important
+}
+
+.weatherIcoS .n110 {
+    background-position: -30px -120px !important
+}
+
+.weatherIcoS .n111, .weatherIcoS .n121, .weatherIcoS .n131, .weatherIcoS .n141 {
+    background-position: -60px -120px !important
+}
+
+.weatherIcoS .n112 {
+    background-position: -90px -120px !important
+}
+
+.weatherIcoS .n120 {
+    background-position: -120px -120px !important
+}
+
+.weatherIcoS .n122 {
+    background-position: -150px -120px !important
+}
+
+.weatherIcoS .n130 {
+    background-position: -180px -120px !important
+}
+
+.weatherIcoS .n132, .weatherIcoS .n142 {
+    background-position: -210px -120px !important
+}
+
+.weatherIcoS .n140 {
+    background-position: -240px -120px !important
+}
+
+.weatherIcoS .n200 {
+    background-position: 0 -150px !important
+}
+
+.weatherIcoS .n210 {
+    background-position: -30px -150px !important
+}
+
+.weatherIcoS .n211, .weatherIcoS .n221, .weatherIcoS .n231, .weatherIcoS .n241 {
+    background-position: -60px -150px !important
+}
+
+.weatherIcoS .n212 {
+    background-position: -90px -150px !important
+}
+
+.weatherIcoS .n220 {
+    background-position: -120px -150px !important
+}
+
+.weatherIcoS .n222 {
+    background-position: -150px -150px !important
+}
+
+.weatherIcoS .n230 {
+    background-position: -180px -150px !important
+}
+
+.weatherIcoS .n232, .weatherIcoS .n242 {
+    background-position: -210px -150px !important
+}
+
+.weatherIcoS .n240 {
+    background-position: -240px -150px !important
+}
+
+.weatherIcoS .n300 {
+    background-position: 0 -180px !important
+}
+
+.weatherIcoS .n310 {
+    background-position: -30px -180px !important
+}
+
+.weatherIcoS .n311, .weatherIcoS .n321, .weatherIcoS .n331, .weatherIcoS .n341 {
+    background-position: -60px -180px !important
+}
+
+.weatherIcoS .n312 {
+    background-position: -90px -180px !important
+}
+
+.weatherIcoS .n320 {
+    background-position: -120px -180px !important
+}
+
+.weatherIcoS .n322 {
+    background-position: -150px -180px !important
+}
+
+.weatherIcoS .n330 {
+    background-position: -180px -180px !important
+}
+
+.weatherIcoS .n332, .weatherIcoS .n342 {
+    background-position: -210px -180px !important
+}
+
+.weatherIcoS .n340 {
+    background-position: -240px -180px !important
+}
+
+.weatherIcoS .n400 {
+    background-position: 0 -210px !important
+}
+
+.weatherIcoS .n410 {
+    background-position: -30px -210px !important
+}
+
+.weatherIcoS .n411, .weatherIcoS .n421, .weatherIcoS .n431, .weatherIcoS .n441 {
+    background-position: -60px -210px !important
+}
+
+.weatherIcoS .n412 {
+    background-position: -90px -210px !important
+}
+
+.weatherIcoS .n420 {
+    background-position: -120px -210px !important
+}
+
+.weatherIcoS .n422 {
+    background-position: -150px -210px !important
+}
+
+.weatherIcoS .n430 {
+    background-position: -180px -210px !important
+}
+
+.weatherIcoS .n432, .weatherIcoS .n442 {
+    background-position: -210px -210px !important
+}
+
+.weatherIcoS .n440 {
+    background-position: -240px -210px !important
+}

@@ -10,6 +10,9 @@ class ForecastTableRender {
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="weather img weatherIcoS" title="Weather">
+                        <td class="align-middle"><i class="fas fa-cloud-sun"></i></td>
+                    </tr>
                     <tr class="temperature" title="Temperature">
                         <td class="align-middle"><i class="fas fa-thermometer-half"></i></td>
                     </tr>
@@ -35,7 +38,10 @@ class ForecastTableRender {
         this.$limit = 4;
 
         this.$pushToTable = function (tableSelector, timeDto) {
+            console.log(timeDto.weatherClass);
+
             $(`${tableSelector} .time`, this.base).append(`<th class="align-middle" scope="col">${timeDto.time}</th>`);
+            $(`${tableSelector} .weather`, this.base).append(`<td class="align-middle"><div class="${timeDto.weatherClass}" title="${timeDto.weather}"></div></td>`);
             $(`${tableSelector} .temperature`, this.base).append(`<td class="align-middle">${`${timeDto.temperature} <br/> <small class="text-muted">${timeDto.temperatureSens}</span>`}</td>`);
             $(`${tableSelector} .wind`, this.base).append(`<td class="align-middle">${`<span title="${timeDto.windStr}"><i class="fas fa-arrow-circle-up ${timeDto.windClass}"></i> ${timeDto.wind}</span>`}</td>`);
             $(`${tableSelector} .chanceOfPrecipitation`, this.base).append(`<td class="align-middle">${timeDto.chanceOfPrecipitation == '-' ? '-' : timeDto.chanceOfPrecipitation + '%'}</td>`);
@@ -61,8 +67,9 @@ class DefaultResponsePage {
             const row = rows[i];
             this.days.push({
                 date: $('.date', row)[0],
+                weather: $('.weather', row)[0],
+                weatherIcon: $('.weatherIcon', row)[0],
                 description: $('.description', row)[0],
-                details: $('.details', row)[0],
                 warnings: $('.warnings', row)[0],
                 temperature: $('.temperature', row)[0],
                 main: $(".main", row)[0],
@@ -70,9 +77,10 @@ class DefaultResponsePage {
                 fillFromSinoptikPage: function (sinoptikPage) {
                     this.date.innerHTML = sinoptikPage.day.name + ', ' + sinoptikPage.day.date.toLocaleDateString(getLang().code, { year: 'numeric', month: 'numeric', day: 'numeric' });
                     
-                    this.temperature.innerHTML = sinoptikPage.day.temperatureMin + ' / ' + sinoptikPage.day.temperatureMax;
+                    this.temperature.innerHTML = `<span title="Max Temperature">${sinoptikPage.day.temperatureMax}</span> <span class="text-muted" title="Min Temperature">| ${sinoptikPage.day.temperatureMin}</span>`;
+                    this.weather.innerHTML = sinoptikPage.day.weather;
+                    $(this.weatherIcon).attr("class", sinoptikPage.day.weatherClass);
                     this.description.innerHTML = sinoptikPage.day.description;
-                    this.details.innerHTML = sinoptikPage.day.details;
                     
                     const mainRender = new ForecastTableRender(this.main);
 
@@ -80,16 +88,6 @@ class DefaultResponsePage {
                         const t = sinoptikPage.day.times[i];
                         mainRender.push(t);
                     }
-
-
-                    // let mainStr = "";
-                    // for (let i = 0; i < sinoptikPage.day.times.length; i++) {
-                    //     const t = sinoptikPage.day.times[i];
-                    //     mainStr += `<p class="m-0">${t.time} — ${t.temperature} (${t.temperatureSens}), ${t.weather}${(t.chanceOfPrecipitation == '-' ? '' : ' (' + t.chanceOfPrecipitation + '%)')},
-                    //     <span title="${t.windStr}"><i class="fas fa-arrow-circle-up ${t.windClass}"></i> ${t.wind} м/с</span>
-                    //     </p>`
-                    // }
-                    // this.main.innerHTML = mainStr;
 
                     if (sinoptikPage.dayWarnings)
                         this.warnings.innerHTML = page.dayWarnings;
@@ -125,15 +123,16 @@ class PageRender {
             html += `
                 <tr>
                     <td class="d-flex flex-wrap px-0">
-                        <div class="col-12 col-md-3 my-3 my-md-0 text-center d-flex flex-column justify-content-center">
+                        <div class="col-12 col-md-3 my-3 my-md-0 text-center d-flex flex-column justify-content-center weatherIcoS">
                             <p class="date font-weight-bold m-0"><i class="fas fa-circle-notch fa-spin"></i></p>
+                            <div class="weatherIcon" style="transform: scale(2.0); margin: 1rem auto;"></div>
                             <p class="temperature m-0"></p>
-                            <p class="description m-0"></p>
+                            <p class="weather m-0"></p>
                             <p class="warnings m-0 text-danger"></p>
                         </div>
                         <div class="col-12 col-md-9">
-                            <p class="main"></p>
-                            <p class="details mt-2 mb-0 font-weight-light"></p>
+                            <p class="main m-0"></p>
+                            <p class="description m-0 font-weight-light"></p>
                         </div>
                     </td>
                 </tr>

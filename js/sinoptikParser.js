@@ -2,6 +2,7 @@ class SinoptikTimeDto {
     constructor() {
         this.time = null;
         this.weather = null;
+        this.weatherСlass = null;
         this.temperature = null;
         this.temperatureSens = null;
         this.wind = null;
@@ -14,8 +15,9 @@ class SinoptikTimeDto {
 class SinoptikDayDto {
     constructor() {
         this.name = null;
+        this.weather = null;
+        this.weatherClass = null;
         this.description = null;
-        this.details = null;
         this.warnings = null;
         this.date = null;
 
@@ -49,7 +51,8 @@ class SinoptikPage {
         
         const selectedDayId = $("#blockDays", page).attr('class');
         dto.day.name = $('#' + selectedDayId + " .day-link", page)[0]?.innerText;
-        dto.day.description = $('#' + selectedDayId + " .weatherIco", page)?.attr("title");
+        dto.day.weather = $('#' + selectedDayId + " .weatherIco", page)?.attr("title");
+        dto.day.weatherClass = $('#' + selectedDayId + " .weatherIco", page)?.attr("class");
 
         const dayPathes = $('#' + selectedDayId + " .day-link", page)?.attr("data-link")?.split('/');
         if (dayPathes) {
@@ -60,7 +63,7 @@ class SinoptikPage {
         dto.day.temperatureMin = $('#' + selectedDayId + " .temperature .min span", page)[0]?.innerText;
         dto.day.temperatureMax = $('#' + selectedDayId + " .temperature .max span", page)[0]?.innerText;
 
-        dto.day.details = $(".wDescription .description", page)[0]?.innerText;
+        dto.day.description = $(".wDescription .description", page)[0]?.innerText;
         dto.day.warnings = $(".oWarnings .description", page)[0]?.innerText;
 
         const timeDetails = $(".weatherDetails tbody", page)[0]?.children;
@@ -70,6 +73,7 @@ class SinoptikPage {
                 const timeDto = new SinoptikTimeDto();
                 timeDto.time = timeDetails[0].children[i].innerText.replace(' ', '').trim();
                 timeDto.weather = timeDetails[1].children[i].children[0].attributes["title"].value;
+                timeDto.weatherClass = timeDetails[1].children[i].children[0].attributes["class"].value;
                 timeDto.temperature = timeDetails[2].children[i].innerText;
                 timeDto.temperatureSens = timeDetails[3].children[i].innerText;
                 timeDto.wind = timeDetails[6].children[i].innerText.trim();
