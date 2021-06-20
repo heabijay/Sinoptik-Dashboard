@@ -123,12 +123,18 @@ class PageRender {
             html += `
                 <tr>
                     <td class="d-flex flex-wrap px-0">
-                        <div class="col-12 col-md-3 my-3 my-md-0 text-center d-flex flex-column justify-content-center weatherIcoS">
-                            <p class="date font-weight-bold m-0"><i class="fas fa-circle-notch fa-spin"></i></p>
-                            <div class="weatherIcon" style="transform: scale(2.0); margin: 1rem auto;"></div>
-                            <p class="temperature m-0"></p>
-                            <p class="weather m-0"></p>
-                            <p class="warnings m-0 text-danger"></p>
+                        <div class="col-12 col-md-3 my-3 my-md-0 d-flex flex-column justify-content-center weatherIcoS">
+                            <div class="d-flex flex-row">
+                                <div>
+                                    <div class="weatherIcon" style="transform: scale(2.0); margin: 1rem auto;"></div>
+                                    <p class="temperature m-0 text-nowrap"></p>
+                                </div>
+                                <div class="ml-3 flex-fill d-flex flex-column justify-content-center">
+                                    <p class="date font-weight-bold m-0"><i class="fas fa-circle-notch fa-spin"></i></p>
+                                    <p class="weather m-0"></p>
+                                    <p class="warnings m-0 text-danger"></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-12 col-md-9">
                             <p class="main m-0"></p>
