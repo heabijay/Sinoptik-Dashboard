@@ -1,5 +1,13 @@
-function makeCorsProxyTunnel(url) {
-    return `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
+class CorsProxy {
+    constructor() { }
+
+    static makeTunnel(url) {
+        return `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
+    }
+
+    static getDataFromResponse(response) {
+        return response.contents;
+    }
 }
 
 function formatSuggestions(data) {
@@ -23,10 +31,12 @@ function startProcessing(startSinoptikUrl, retrieveFromCache = true) {
     $.ajax({
         type: "GET",
         cache: retrieveFromCache,
-        url: makeCorsProxyTunnel(startSinoptikUrl)
+        url: CorsProxy.makeTunnel(startSinoptikUrl)
     }).done(function (response) {
+        const data = CorsProxy.getDataFromResponse(response);
+
         PageRender.clear();
-        const page = SinoptikPage.Parse(response.contents);
+        const page = SinoptikPage.Parse(data);
         
         if (page.isCityNotFound) {
             if (page.isRegion) {
@@ -52,9 +62,10 @@ function startProcessing(startSinoptikUrl, retrieveFromCache = true) {
             $.ajax({
                 type: "GET",
                 cache: retrieveFromCache,
-                url: makeCorsProxyTunnel(getLang().urlEndpoint + '/' + page.forecastSubpath + '/' + (`${_date.getFullYear()}-${("00" + (_date.getMonth() + 1)).slice(-2)}-${("00" + _date.getDate()).slice(-2)}`))
+                url: CorsProxy.makeTunnel(getLang().urlEndpoint + '/' + page.forecastSubpath + '/' + (`${_date.getFullYear()}-${("00" + (_date.getMonth() + 1)).slice(-2)}-${("00" + _date.getDate()).slice(-2)}`))
             }).done(function (response) {
-                const page = SinoptikPage.Parse(response.contents);
+                const data = CorsProxy.getDataFromResponse(response);
+                const page = SinoptikPage.Parse(data);
                 markup.days[_i].fillFromSinoptikPage(page);
             });
         }
@@ -75,9 +86,9 @@ function initSearchSuggestions() {
 
             $.ajax({
                 type: "GET",
-                url: makeCorsProxyTunnel(getLang().urlEndpoint + "/search.php?q=" + query)
+                url: CorsProxy.makeTunnel(getLang().urlEndpoint + "/search.php?q=" + query)
             }).done(function (response) {
-                query_cache[query] = response.contents;
+                query_cache[query] = CorsProxy.getDataFromResponse(response);
                 return process(formatSuggestions(query_cache[query]));
             });
         },
