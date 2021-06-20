@@ -48,3 +48,11 @@
 .wind-Z::before {
     content: "\f28d";
 }
+
+.table-unstriped tbody tr {
+    background-color: transparent!important;
+}
+
+.forecastTable {
+    font-size: 0.9rem;
+}
