@@ -68,7 +68,7 @@ class DefaultResponsePage {
                 weather: $('.weather', row)[0],
                 weatherIcon: $('.weatherIcon', row)[0],
                 description: $('.description', row)[0],
-                warnings: $('.warnings', row)[0],
+                warnings: $('.warnings', row),
                 temperature: $('.temperature', row)[0],
                 main: $(".main", row)[0],
 
@@ -88,8 +88,10 @@ class DefaultResponsePage {
                         forecastRender.push(t);
                     }
 
-                    if (sinoptikPage.dayWarnings)
-                        this.warnings.innerHTML = page.dayWarnings;
+                    if (sinoptikPage.day.warnings != null) {
+                        this.warnings.addClass("mt-3");
+                        this.warnings.html(`<i class="fas fa-exclamation-circle"></i> ${sinoptikPage.day.warnings.charAt(0).toUpperCase() + sinoptikPage.day.warnings.slice(1)}`);
+                    }
                 }
             });
         }
@@ -131,9 +133,10 @@ class PageRender {
                                 <div class="ml-3 flex-fill d-flex flex-column justify-content-center">
                                     <p class="date font-weight-bold m-0"><i class="fas fa-circle-notch fa-spin"></i></p>
                                     <p class="weather m-0"></p>
-                                    <p class="warnings m-0 text-danger"></p>
+                                    <p class="warnings m-0 text-danger d-md-none" style="margin-top: 0.33rem!important"></p>
                                 </div>
                             </div>
+                            <p class="warnings m-0 text-danger text-center d-none d-md-block"></p>
                         </div>
                         <div class="col-12 col-md-9">
                             <p class="main m-0"></p>
